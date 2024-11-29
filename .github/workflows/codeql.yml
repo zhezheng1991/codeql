@@ -78,13 +78,8 @@ jobs:
       env:
         # 可以在这里覆盖全局环境变量
         GRADLE_OPTS: >-
-          -Dorg.gradle.caching=true
           -Dandroid.useAndroidX=true
           -Dandroid.enableJetifier=true
-    
-    
-    
-    
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
