@@ -46,10 +46,12 @@ jobs:
         cache: gradle
 
 
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
 
 
 
-    # Initializes the CodeQL tools for scanning.
+      # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
@@ -77,6 +79,11 @@ jobs:
         echo '  make bootstrap'
         echo '  make release'
         exit 1
+
+    - name: Build with Gradle
+      run: |
+        ./gradlew clean build -x test --stacktrace
+    
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
