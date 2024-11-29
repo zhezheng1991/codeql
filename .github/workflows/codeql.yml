@@ -33,9 +33,9 @@ jobs:
       matrix:
         include:
         - language: c-cpp
-          build-mode: autobuild
+          build-mode: manual
         - language: java-kotlin
-          build-mode: autobuild
+          build-mode: manual
     steps:
     - uses: actions/checkout@v4
 
