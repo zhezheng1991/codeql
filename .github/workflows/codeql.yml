@@ -45,7 +45,7 @@ jobs:
       run: chmod +x gradlew
 
     - name: clean gradlew
-      run: ./gradlew --no-daemon clean
+      run: gradlew --no-daemon clean
 
       # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
