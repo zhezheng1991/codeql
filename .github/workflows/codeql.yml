@@ -49,10 +49,10 @@ jobs:
       run: chmod +x gradlew
 
     - name: Setup Android SDK
-      uses: android-actions/setup-android@v4
+      uses: android-actions/setup-android@v2
 
     - name: Cache Gradle dependencies
-      uses: actions/cache@v4
+      uses: actions/cache@v2
       with:
         path: ~/.gradle/caches
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
