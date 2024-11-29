@@ -37,15 +37,7 @@ jobs:
         - language: java-kotlin
           build-mode: autobuild
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK
-      uses: actions/setup-java@v3
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-        cache: gradle
-
-
+    - uses: actions/checkout@v4
 
 
 
