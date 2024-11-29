@@ -52,9 +52,6 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-
-
-
       with:
         languages: ${{ matrix.language }}
         build-mode: ${{ matrix.build-mode }}
