@@ -45,8 +45,7 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v3
+
 
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2  # 推荐使用官方 Gradle 构建动作
