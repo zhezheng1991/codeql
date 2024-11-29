@@ -49,7 +49,15 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-
+    - name: Build Project
+      run: |
+        chmod +x gradlew
+        ./gradlew clean build -x test --stacktrace
+      env:
+        # 可以在这里覆盖全局环境变量
+        GRADLE_OPTS: >-
+          -Dandroid.useAndroidX=true
+          -Dandroid.enableJetifier=true
 
 
       # Initializes the CodeQL tools for scanning.
@@ -71,15 +79,7 @@ jobs:
     # to build your code.
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
-    - name: Build Project
-      run: |
-        chmod +x gradlew
-        ./gradlew clean build -x test --stacktrace
-      env:
-        # 可以在这里覆盖全局环境变量
-        GRADLE_OPTS: >-
-          -Dandroid.useAndroidX=true
-          -Dandroid.enableJetifier=true
+
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
